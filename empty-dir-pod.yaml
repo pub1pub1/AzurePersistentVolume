@@ -1,0 +1,15 @@
+# empty-dir-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: empty-dir-pod
+spec:
+  containers:
+  - image: nginx:latest
+    name: empty-dir-container
+    volumeMounts:
+    - mountPath: /cache
+      name: cache-volume
+  volumes:
+  - name: cache-volume
+    emptyDir: {}
